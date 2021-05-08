@@ -1,15 +1,15 @@
 ## Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
-*$py.class
+$py.class
 
 ## Project Settings
 # Spyder
-*.spyderproject
-*.spyproject
+.spyderproject
+.spyproject
 
 # Visual Studio Code
-*.vscode
+.vscode
 
 # Vim
-*.vim
+.vim
