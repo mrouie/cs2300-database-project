@@ -11,16 +11,16 @@ create table zoo (
 
 create table employee (
     fname        text not null,
-    minit        text not null,
+    minit        text,
     lname        text not null,
-    eid          integer autoincrement not null,
+    eid          integer primary key autoincrement not null,
     phone_number integer,
     s_date       date not null,
     sex          text,
     age          integer,
     salary       text not null,
     zname        text REFERENCES zoo(zname),
-    CONSTRAINT employee_k PRIMARY KEY (eid)
+    CONSTRAINT employee_k
 );
 
 create table manager (
@@ -34,7 +34,7 @@ create table manager (
 create table caretaker (
     specialty text not null,
     eid       integer not null,
-    zoo_subsection text not null REFERENCES manager(zoo_subsection)
+    zoo_subsection text not null REFERENCES manager(zoo_subsection),
     CONSTRAINT k_caretaker
         FOREIGN KEY (eid)
         REFERENCES employee(eid)
