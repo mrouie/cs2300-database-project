@@ -155,20 +155,22 @@ def menu_main(zoo):
         else:
             for option, desc in options_user.items():
                 if desc is not None:
-                    print(option + ". " desc)
+                    print(option + ". " + desc)
             choice = input("ZooDatabase> ")
             if choice not in options_admin.keys():
                 print("Invalid choice. Choose from options below:")
                 continue
         
         if choice == '1':
-            sql_funcs.all_animals()
+            sql_funcs.all_animals(db_file)
         elif choice == '2':
             # zoo.view_map() #TODO: pls implement
+            pass
         elif choice == '3':
-            pass
+            animal_to_find = input("Please enter the animal ID to find more info: ")
+            animal_info(db_file, animal_to_find)
         elif choice == '4':
-            pass
+            sql_funcs.zoo_times(db_file)
         elif choice == '5':
             pass
         elif choice == '6':
@@ -221,53 +223,57 @@ def menu_animal():
             animals = []
             how_many = int(input("How many animals would you like to add?: "))
             for x in range(how_many):
-                a = int(input("Please enter animal id: "))
-                b = int(input("Please enter animal cage number: "))
-                c = input("Please enter animal class: ")
-                d = input("Please enter animal species: ")
-                e = input("Please enter animal feed time: ")
-                f = input("Please enter animal zoo section: ")
-                g = input("Please enter animal diet: ")
-                animals.append([a,b,c,d,e,f,g])
-            sql_funcs.animals(db_file, animals)
+                a = int(input("Please enter animal cage number: "))
+                b = input("Please enter animal class: ")
+                c = input("Please enter animal species: ")
+                d = input("Please enter animal feed time: ")
+                e = input("Please enter animal zoo section: ")
+                f = input("Please enter animal diet: ")
+                animals.append([a,b,c,d,e,f])
+            sql_funcs.add_animal(db_file, animals)
             
                 
         elif choice == '2':
             update_choice = "TBD"
             continue_choice = 'yes'
             animal_options = {
-                '1': "The animal's id.",
-                '2': "The animal's cage number.",
-                '3': "The animal's class.",
-                '4': "The animal's species.",
-                '5': "The animal's feeding time.",
-                '6': "The animal's zoo section.",
-                '7': "The animal's diet.",
+                '1': "The animal's cage number.",
+                '2': "The animal's class.",
+                '3': "The animal's species.",
+                '4': "The animal's feeding time.",
+                '5': "The animal's zoo section.",
+                '6': "The animal's diet.",
                 'b': "Go back.",
                 'back': "",
                 'q': "Quit.",
                 'quit': "",
             } 
+            aid = input("Which animal's info would you like to update?: ")
             while(update_choice.lower() == 'yes'):
                 print("What information about the animal would you like to update?")
                 for x in aniaml_options:
                     print animal_options[x]
                 update_choice = input()
                 # NOT SURE AS TO HOW I ACCESS THE ANIMAL INFO SO THIS IS PSEUDO CODE
+                cage_num,bio_class,species,feed_time,zoo_sec,diet = 0,0,0,0,0,0
                 if update_choice == '1':
-                    animal.id = int(input())
+                    cage_num = input("Enter a new cage number: ")
+                    sql_funcs.update_animal(db_file,aid,cage_num,bio_class,species,feed_time,zoo_sec,diet)
                 elif update_choice == '2':
-                    animal.cage_number == int(input())
+                    bio_class = input("Enter a new biological class: ")
+                    sql_funcs.update_animal(db_file,aid,cage_num,bio_class,species,feed_time,zoo_sec,diet)
                 elif update_choice == '3':
-                    animal.classs == input()
+                    species = input("Enter a new species: ")
+                    sql_funcs.update_animal(db_file,aid,cage_num,bio_class,species,feed_time,zoo_sec,diet)
                 elif update_choice == '4':
-                    animal.species == input()
+                    feed_time = input("Enter a new feed time: ")
+                    sql_funcs.update_animal(db_file,aid,cage_num,bio_class,species,feed_time,zoo_sec,diet)
                 elif update_choice == '5':
-                    animal.feed_time == input()
+                    zoo_sec = input("Enter a new zoo section: ")
+                    sql_funcs.update_animal(db_file,aid,cage_num,bio_class,species,feed_time,zoo_sec,diet)
                 elif update_choice == '6':
-                    animal.zoo_section == input()
-                elif update_choice == '7':
-                    animal.diet == input() 
+                    diet = input("Enter a new diet: ")
+                    sql_funcs.update_animal(db_file,aid,cage_num,bio_class,species,feed_time,zoo_sec,diet)
                 elif update_choice == 'b' or update_choice == 'back':
                     menu_animal()
                 elif update_choice == 'q' or update_choice == 'quit':
@@ -438,7 +444,7 @@ def menu_view_users():
 if __name__ == "__main__":
     zoo = ZooDatabase()
     zoo.load_users(USERS_FILE, ADMINS_FILE)
-    # db_file = "zoo.db"
+    db_file = "zoo.db"
     user_choice = ""
 
     print("Welcome " + zoo.current_user + " to your Zoo Access Terminal.")
