@@ -1,0 +1,14 @@
+    1             2              3             4              5               6
+A   /-----------------------------------------------------------------------------------------\
+    |Katanga Lion |Transvaal Lion|Asian Bear   |Indian Eleph. |African Eleph. |Cockatoos Par. |
+    |Area A1      |Area  A2      |Area A3      |Area A4       |Area A5        |Area A6        |
+B   |-------------|--------------|-------------|--------------|---------------|---------------|
+    |Anglo-N. Goat|Souvenir Shop |Brown Bear   |Siberian Tiger|Sumatran Tiger |Love-Bird Par. |
+    |Area B1      |Area  B2      |Area B3      |Area B4       |Area B5        |Area B6        |
+C   |-------------|--------------|-------------|--------------|---------------|---------------|
+    |Boer Goat    |Eastern Gor.  |Retic. Giraf.|Cobra Snake   |Restaurant     |Lion-T. Monk.  |
+    |Area C1      |Area  C2      |Area C3      |Area C4       |Area C5        |Area C6        |
+D   |-------------|--------------|-------------|--------------|---------------|---------------|
+    |Western Gor. |Ice-Cream Shop|Japanese Mon.|Northern Gir. |Python Snake   |Kid Tattoo     |
+    |Area D1      |Area  D2      |Area D3      |Area D4       |Area D5        |Area D6        |
+    \-----------------------------------------------------------------------------------------/
