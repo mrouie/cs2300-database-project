@@ -1,5 +1,4 @@
-# Hello
-# sahbarwal more like cyberwal
+
 """
 Some kind of documentation
 """
@@ -45,7 +44,7 @@ class ZooDatabase:
                 self.admins[username] = password
         return
 
-    # creates and stores new user from std input into USERS_FILE
+    # creates &  stores new user from std input into USERS_FILE
     def create_acct(self):
         print("Enter the username: ")
         username = input(PROMPT)
