@@ -1,4 +1,4 @@
-    1             2              3             4              5               6
+     1             2              3             4              5               6
 A   /-----------------------------------------------------------------------------------------\
     |Katanga Lion |Transvaal Lion|Asian Bear   |Indian Eleph. |African Eleph. |Cockatoos Par. |
     |Area A1      |Area  A2      |Area A3      |Area A4       |Area A5        |Area A6        |
