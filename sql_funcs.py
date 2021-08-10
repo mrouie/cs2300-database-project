@@ -42,7 +42,7 @@ def zoo_info(db_file):
         curs.execute(select)
 
 def animal_info(db_file, aid):
-    # user_input = input("Please enter the animal ID to find more info: ")
+    # user_input = input("Please enter the animal ID to find out more info: ")
     with sqlite3.connect(db_file) as connector:
         curs = connector.cursor()
         an1 = "select biological_class,species,zoo_section,diet,feed_time"
